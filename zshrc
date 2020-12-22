@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful plugins for Rails development with Sublime Text
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search)
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search vscode)
 
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -14,8 +14,8 @@ export HOMEBREW_NO_ANALYTICS=1
 source "${ZSH}/oh-my-zsh.sh"
 
 # Load rbenv if installed
-export PATH="${HOME}/.rbenv/bin:${PATH}"
-type -a rbenv > /dev/null && eval "$(rbenv init -)"
+#export PATH="${HOME}/.rbenv/bin:${PATH}"
+#type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
@@ -28,4 +28,24 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1
+then 
+  eval "$(pyenv init -)" 
+fi
+
+export LD_RUN_PATH="/home/devops01/openssl/lib" 
+export LDFLAGS="-L/home/devops01/openssl/lib" 
+export CPPFLAGS="-I/home/devops01/openssl/include" 
+export CFLAGS="-I/home/devops01/openssl/include" 
+export CONFIGURE_OPTS="--with-openssl=/home/devops01/openssl"
+
+export PATH="$HOME/.tfenv/bin:$PATH"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+
+export PATH="$PATH:/usr/local/go/bin:/home/devops01/go/bin"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
