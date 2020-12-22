@@ -49,3 +49,7 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 
 export PATH="$PATH:/usr/local/go/bin:/home/devops01/go/bin"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
+export PATH=$PATH:/usr/src/git-2.22.0
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
